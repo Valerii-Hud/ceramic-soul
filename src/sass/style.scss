@@ -1,20 +1,21 @@
-//——————————————— START LIBS ———————————————//
+//——————~ LIBS ~——————//
 @use "/src/sass/libs/fontello.scss";
 @use "/src/sass/libs/modern-normalize.min.scss";
-//——————————————— FINISH LIBS ———————————————//
 
-//——————————————— START BASES ———————————————//
+//——————~ BASES ~——————//
 @use "/src/sass/base/variables.scss";
 @use "/src/sass/base/basic.scss";
-//——————————————— FINISH BASES ———————————————//
+@use "/src/sass/base/mixins.scss";
 
-//——————————————— START REUSABLE COMPONENTS ———————————————//
+//——————~ REUSABLE COMPONENTS ~——————//
 @use "/src/sass/blocks/header.scss";
-//——————————————— FINISH REUSABLE COMPONENTS ———————————————//
 
-//——————————————— START COMPONENTS ———————————————//
+//——————~ UI COMPONENTS ~——————//
+@use "/src/sass/ui/titles.scss";
+@use "/src/sass/ui/buttons.scss";
+
+//——————~ COMPONENTS ~——————//
 @use "/src/sass/blocks/promo.scss";
-//——————————————— FINISH COMPONENTS ———————————————//
 
 // :root {
 // 	--light-color: #f5f5f7;
