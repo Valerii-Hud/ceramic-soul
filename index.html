@@ -17,32 +17,54 @@
   </head>
   <body>
     <section class="promo">
+      <img src="/src/img/promo/potter.jpg" alt="potter" class="promo__potter" />
       <div class="container">
         <header class="header">
-          <div class="burger">
-            <span class="burger__line"></span>
-            <span class="burger__line-small"></span>
-            <span class="burger__line"></span>
-          </div>
-          <a href="#" class="header__logo">
-            <img src="/src/logo/logo.png" alt="ceramic soul" />
-          </a>
-          <div class="header__icons">
-            <a href=""><span class="icon-search"></span></a>
-            <a href=""><span class="icon-shopping-bag"></span></a>
+          <div class="header__top">
+            <div class="burger">
+              <span class="burger__line"></span>
+              <span class="burger__line-small"></span>
+              <span class="burger__line"></span>
+            </div>
+            <a href="#" class="header__logo">
+              <img src="/src/logo/logo.png" alt="ceramic soul" />
+            </a>
+            <div class="header__icons">
+              <a href="#"><span class="icon-search"></span></a>
+              <a href="#"><span class="icon-shopping-bag"></span></a>
+            </div>
           </div>
         </header>
-        <h1 class="promo__title title__h1-italic">
-          Make your dream come true or decorate your home
-        </h1>
-        <img
-          src="/src/img/promo/ceramic-vase.jpg"
-          alt="ceramic vase"
-          class="promo__img"
-        />
-        <button class="btn-primary">shop now</button>
+        <nav class="header__nav">
+          <ul class="header__nav_wrapper">
+            <li class="header__nav_wrapper-item">
+              <a href="#" class="header__link">Catalog</a>
+            </li>
+            <li class="header__nav_wrapper-item">
+              <a href="#" class="header__link">Blog</a>
+            </li>
+            <li class="header__nav_wrapper-item">
+              <a href="#" class="header__link">About</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="promo__wrapper">
+          <h1 class="promo__title title__h1-italic">
+            Make your dream come true <br />
+            or decorate your home
+          </h1>
+          <div class="promo__cta">
+            <img
+              src="/src/img/promo/ceramic-vase.jpg"
+              alt="ceramic vase"
+              class="promo__img"
+            />
+            <button class="promo__btn btn__primary">Shop now</button>
+          </div>
+        </div>
       </div>
     </section>
+
     <script type="module" src="/src/js/script.js"></script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+@use "/src/sass/base/variables.scss" as *;
+
 h1,
 h2,
 h3,
@@ -35,7 +37,30 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: $light-color;
+}
+
 .container {
   width: 100%;
   padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    min-width: 1140px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    min-width: 1440px;
+  }
 }

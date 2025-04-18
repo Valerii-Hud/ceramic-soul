@@ -4,10 +4,86 @@
     margin-block-start: 50px;
     padding-inline: 0 5px;
   }
+  &__cta {
+    margin-top: 40px;
+  }
   &__img {
-    margin: 40px auto 0 auto;
+    margin: 0 auto;
     width: 270px;
     height: 377px;
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+  }
+  &__btn {
+    margin: 18px auto 0 auto;
+  }
+  &__potter {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .promo {
+    margin: 24px;
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__img {
+      width: 230px;
+      height: 312px;
+    }
+    &__title {
+      padding-inline: 0;
+      padding-top: 240px;
+      padding-left: 71px;
+      text-align-last: left;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .promo {
+    position: relative;
+    &__potter {
+      position: absolute;
+      top: -24px;
+      left: -24px;
+      display: block;
+      width: clamp(450px, 24vw, 630px);
+      height: min(633px);
+      object-fit: cover;
+    }
+    &__title {
+      padding-left: 570px;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .promo {
+    margin-top: 40px;
+    &__potter {
+      top: -40px;
+      height: 100%;
+      width: 30vw;
+    }
+    &__wrapper {
+      margin-top: 80px;
+    }
+    &__img {
+      width: 330px;
+      height: 460px;
+    }
+    &__title {
+      padding: 384px 0 0 640px;
+    }
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .promo {
+    &__potter {
+      width: 21.5vw;
+    }
   }
 }

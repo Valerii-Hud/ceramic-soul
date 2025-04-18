@@ -31,3 +31,8 @@
 // 		--footer-padding-inline: 15px;
 // 	}
 // }
+
+::selection {
+  background-color: variables.$ui-ceramic;
+  color: variables.$light-color;
+}
