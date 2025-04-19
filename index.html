@@ -110,6 +110,7 @@
       </div>
     </section>
 
+    <!-- ——————~ GET IN TOUCH SECTION ~—————— -->
     <section class="git">
       <div class="container">
         <h2 class="git__title title__h2">Get in touch</h2>
@@ -126,26 +127,52 @@
           <div
             class="git__item git__item-form pure-u-1 pure-u-xl-11-24 pure-u-xxl-2-5"
           >
-            <p class="git__item-form_content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-              unde et cupiditate corporis dolore nulla velit molestiae aperiam
-              iure! Hic aut nostrum quam id est repudiandae nihil quis
-              architecto excepturi necessitatibus reiciendis eaque itaque, illo
-              accusamus aliquid enim nam quos alias, dolorem nulla ut sapiente
-              consectetur accusantium. Quo, sunt cumque! Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Inventore unde et cupiditate
-              corporis dolore nulla velit molestiae aperiam iure! Hic aut
-              nostrum quam id est repudiandae nihil quis architecto excepturi
-              necessitatibus reiciendis eaque itaque, illo accusamus aliquid
-              enim nam quos alias, dolorem nulla ut sapiente consectetur
-              accusantium. Quo, sunt cumque! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Inventore unde et cupiditate
-              corporis dolore nulla velit molestiae aperiam iure! Hic aut
-              nostrum quam id est repudiandae nihil quis architecto excepturi
-              necessitatibus reiciendis eaque itaque, illo accusamus aliquid
-              enim nam quos alias, dolorem nulla ut sapiente consectetur
-              accusantium. Quo, sunt cumque! Lorem ipsum dolor sit amet cons
-            </p>
+            <form action="#" class="git__item-form_content">
+              <fieldset class="git__fieldset">
+                <div class="git__input-block">
+                  <label class="git__label" for="name">Name</label>
+                  <input
+                    required
+                    class="git__input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="git__input-block">
+                  <label class="git__label" for="email">Email</label>
+                  <input
+                    required
+                    class="git__input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+              </fieldset>
+              <label class="git__label" for="question">Your question</label>
+              <textarea
+                required
+                class="git__textarea"
+                name="question"
+                id="question"
+                placeholder="Question"
+              ></textarea>
+              <label class="git__label git__check-block" for="checkbox">
+                <input
+                  required
+                  class="git__checkbox"
+                  type="checkbox"
+                  id="checkbox"
+                />
+                I agree with the
+                <a href="terms" class="git__terms">terms</a>
+              </label>
+              <button class="btn btn__send git__btn">Send request</button>
+              <img src="/src/img/form/vase.png" alt="vase" class="git__img" />
+            </form>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+@use "/src/sass/base/variables.scss" as *;
+
 .git {
   padding-top: 60px;
   &__wrapper {
@@ -6,8 +8,68 @@
   &__item {
     &-img {
       display: none;
-      margin-right: 40px;
+      margin-right: 30px;
     }
+  }
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  &__label {
+    display: block;
+    color: $dark-color;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+  :is(&__input, &__textarea) {
+    margin-bottom: 8px;
+    width: 100%;
+    border: 1px solid #e2d1e5;
+    background-color: #fff;
+    color: $dark-color;
+    border-radius: 2px;
+    &:focus {
+      outline: 1px solid $dark-color;
+      border: none;
+    }
+    &::placeholder {
+      font-size: 14px;
+      color: $ui-disabled;
+    }
+  }
+  &__input {
+    height: 50px;
+    padding: 10px 15px;
+  }
+  &__textarea {
+    height: 135px;
+    color: $dark-color;
+    padding: 10px 15px;
+    resize: none;
+  }
+  &__check-block {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+  }
+  &__checkbox {
+    margin-right: 15px;
+    height: 15px;
+    width: 15px;
+  }
+  &__terms {
+    margin-left: 2px;
+    text-decoration: none;
+    color: #a22dc6;
+  }
+  &__btn {
+    margin-top: 20px;
+  }
+  &__img {
+    display: none;
   }
 }
 
@@ -15,6 +77,19 @@
   .git {
     &__wrapper {
       margin-top: 45px;
+      position: relative;
+    }
+    &__img {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    &__input {
+      width: 50%;
+    }
+    &__textarea {
+      width: 50%;
     }
   }
 }
@@ -23,6 +98,13 @@
   .git {
     &__wrapper {
       margin-top: 80px;
+    }
+
+    &__input {
+      &:hover {
+        outline: 1px solid $dark-color;
+        border: none;
+      }
     }
     &__item {
       &-img {
@@ -38,6 +120,18 @@
       &-img {
         margin-right: 0px;
       }
+    }
+    &__fieldset {
+      display: flex;
+      column-gap: 45px;
+    }
+    &__input {
+      width: 300px;
+      height: 50px;
+    }
+    &__textarea {
+      width: 300px;
+      height: 135px;
     }
   }
 }
