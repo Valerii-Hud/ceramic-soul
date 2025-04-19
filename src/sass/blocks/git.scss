@@ -1,0 +1,43 @@
+.git {
+  padding-top: 60px;
+  &__wrapper {
+    margin-top: 60px;
+  }
+  &__item {
+    &-img {
+      display: none;
+      margin-right: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .git {
+    &__wrapper {
+      margin-top: 45px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .git {
+    &__wrapper {
+      margin-top: 80px;
+    }
+    &__item {
+      &-img {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .git {
+    &__item {
+      &-img {
+        margin-right: 0px;
+      }
+    }
+  }
+}
