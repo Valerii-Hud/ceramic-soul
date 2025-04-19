@@ -19,6 +19,25 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .title {
+    &__h2 {
+      font-size: 36px;
+    }
+    &__h3 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    &__h2 {
+      font-size: 40px;
+    }
+  }
+}
+
 @media screen and (min-width: 1920px) {
   .title {
     &__h1 {

@@ -42,25 +42,25 @@ body {
 }
 
 .container {
-  width: 100%;
+  max-width: 100%;
   padding: 0 10px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
+    margin: 0 auto;
     max-width: 720px;
-    padding: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    min-width: 1140px;
+    max-width: 1140px;
   }
 }
 
 @media screen and (min-width: 1920px) {
   .container {
-    min-width: 1440px;
+    max-width: 1440px;
   }
 }
