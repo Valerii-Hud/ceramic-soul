@@ -1,0 +1,21 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.works {
+  margin-top: 60px;
+  padding-bottom: 100px;
+  &__slider {
+    margin-top: 40px;
+    padding-bottom: 45px;
+  }
+  .swiper {
+    &-slide img {
+      width: 100%;
+    }
+    :is(&-button-prev, &-button-next) {
+      display: none;
+    }
+    &-pagination {
+      bottom: 0;
+    }
+  }
+}
