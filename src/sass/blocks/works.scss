@@ -13,9 +13,48 @@
     }
     :is(&-button-prev, &-button-next) {
       display: none;
+      background-color: transparent;
+      border: none;
     }
     &-pagination {
-      bottom: 0;
+      &-bullet {
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+        border-radius: 0px;
+        -webkit-tap-highlight-color: transparent;
+        background-color: $dark-color;
+        &-active {
+          background-color: $ui-ceramic;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .works {
+    .swiper {
+      img {
+        width: 400px;
+        margin: 0 auto;
+        object-fit: cover;
+      }
+    }
+    &__slider {
+      margin-top: 45px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .works {
+    &__slider {
+      margin: 80px 40px 0 40px;
+      padding-bottom: 40px;
+    }
+    :is(.swiper-button-next, .swiper-button-prev) {
+      display: block;
     }
   }
 }
