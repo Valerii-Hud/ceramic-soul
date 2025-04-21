@@ -1,16 +1,16 @@
 //——————~ SWIPER LIB ~——————//
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 //——————~ MY STYLES ~——————//
-import "../sass/style.scss";
+import '../sass/style.scss';
 
 //——————~ WORKS SWIPER CFG ~——————//
 try {
-  new Swiper(".works__slider", {
+  new Swiper('.works__slider', {
     modules: [Navigation, Pagination],
     allowSlideNext: true,
     allowSlidePrev: true,
@@ -27,8 +27,8 @@ try {
       delay: 5000,
     },
     pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
+      el: '.swiper-pagination',
+      type: 'bullets',
       clickable: true,
     },
     breakpoints: {
@@ -36,8 +36,8 @@ try {
         slidesPerView: 3,
         spaceBetween: 5,
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
       },
       1920: {

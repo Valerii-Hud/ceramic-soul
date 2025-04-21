@@ -11,7 +11,7 @@
   "devDependencies": {
     "postcss-pxtorem": "^6.1.0",
     "sass": "^1.84.0",
-    "vite": "^6.1.0"
+    "vite": "^6.3.2"
   },
   "dependencies": {
     "swiper": "^11.2.6"
