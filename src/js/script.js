@@ -36,8 +36,8 @@ try {
         slidesPerView: 3,
         spaceBetween: 5,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.icon-right-open',
+          prevEl: '.icon-left-open',
         },
       },
       1920: {
