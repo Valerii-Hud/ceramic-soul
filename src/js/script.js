@@ -5,9 +5,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-//——————~ MY STYLES ~——————//
-import "/src/sass/style.scss";
-
 //——————~ WORKS SWIPER CFG ~——————//
 try {
   new Swiper(".works__slider", {
@@ -74,9 +71,12 @@ try {
       tabs.forEach((t) => t.classList.remove("catalog__tab_active"));
       contents.forEach((c) => (c.style.display = "none"));
       tab.classList.add("catalog__tab_active");
-      contents[index].style.display = "block";
+      contents[index].style.display = "grid";
     });
   });
 } catch (e) {
   console.error(e);
 }
+
+//——————~ MY STYLES ~——————//
+import "/src/sass/style.scss";
