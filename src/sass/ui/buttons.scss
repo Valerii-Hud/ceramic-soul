@@ -34,6 +34,16 @@
       border: 1px solid $ui-disabled;
     }
   }
+  &__read {
+    @include btn;
+    width: 145px;
+    height: 32px;
+    font-size: 14px;
+  }
+  &:focus {
+    border: 1px solid $ui-ceramic;
+    outline: 1px solid $ui-ceramic;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -52,6 +62,16 @@
       }
     }
     &__send {
+      &:active {
+        border: 1px solid $ui-ceramic;
+        outline: 1px solid $ui-ceramic;
+      }
+      &:hover {
+        color: $ui-ceramic;
+        border: 1px solid $ui-ceramic;
+      }
+    }
+    &__read {
       &:active {
         border: 1px solid $ui-ceramic;
         outline: 1px solid $ui-ceramic;
