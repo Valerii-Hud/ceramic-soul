@@ -1,0 +1,48 @@
+.find {
+  padding-top: 60px;
+  &__wrapper {
+    margin-top: 60px;
+  }
+  &__map {
+    width: 100%;
+    height: 206px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .find {
+    &__wrapper {
+      padding: 0 29px;
+    }
+    &__map {
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .find {
+    &__wrapper {
+      padding: 0;
+    }
+    &__map {
+      display: block;
+      margin: 0 auto;
+      width: 663px;
+      height: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .find {
+    padding-top: 100px;
+    &__wrapper {
+      margin-top: 80px;
+    }
+    &__map {
+      width: 801px;
+      height: 604px;
+    }
+  }
+}
