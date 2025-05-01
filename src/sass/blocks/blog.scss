@@ -53,10 +53,11 @@
       padding: 25px 25px 0 25px;
     }
     &__wrapper {
-      margin-top: 15px;
+      margin-top: 60px;
       &::before {
         @include angle-border;
-        left: 6px;
+        left: 10px;
+        top: 10px;
       }
     }
     &__data {
@@ -68,14 +69,21 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .blog {
     &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       &::before {
         @include angle-border;
-        left: 10px;
-        top: 10px;
+        left: 5px;
+        top: 5px;
       }
+    }
+    &__img {
+      object-fit: cover;
+      height: 260px;
+      width: 240px;
     }
   }
 }
