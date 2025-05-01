@@ -1,0 +1,18 @@
+.about {
+  padding-top: 50px;
+  &__title {
+    padding-top: 60px;
+  }
+  &__wrapper {
+    padding-top: 60px;
+  }
+  &__text {
+    padding-top: 35px;
+  }
+  &__descr:nth-child(n + 1) {
+    margin-top: 35px;
+  }
+  &__descr:first-child {
+    margin-top: 0px;
+  }
+}

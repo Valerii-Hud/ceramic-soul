@@ -82,8 +82,17 @@
     }
     &__img {
       object-fit: cover;
-      height: 260px;
-      width: 240px;
+      width: 260px;
+      height: 240px;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .blog {
+    &__img {
+      width: 335px;
+      height: 240px;
     }
   }
 }
