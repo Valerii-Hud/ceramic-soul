@@ -1,5 +1,81 @@
 @use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
 
 .blog {
   padding-top: 50px;
+  &__title {
+    margin-top: 60px;
+    &-h3 {
+      text-align: left;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  &__card {
+    border: 1px solid $dark-color;
+    background-color: $light-color;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+  &__btn {
+    transform: translateY(-1px);
+  }
+  &__data {
+    &-column {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding: 25px 25px 0 25px;
+    }
+  }
+  &__img {
+    max-inline-size: calc(100% + 2px);
+    transform: translateX(-1px) translateY(-1px);
+  }
+  &__descr {
+    margin-top: 25px;
+    padding: 0px 25px 25px 25px;
+    font-size: 16px;
+    font-style: normal;
+    color: $dark-color;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog {
+    &__wrapper {
+      padding: 25px 25px 0 25px;
+    }
+    &__wrapper {
+      margin-top: 15px;
+      &::before {
+        @include angle-border;
+        left: 6px;
+      }
+    }
+    &__data {
+      &-column {
+        gap: 0;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog {
+    &__wrapper {
+      &::before {
+        @include angle-border;
+        left: 10px;
+        top: 10px;
+      }
+    }
+  }
 }

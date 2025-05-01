@@ -23,3 +23,14 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+@mixin angle-border {
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: 200px;
+  left: -10px;
+  top: 10px;
+  border-top: 1px solid $dark-color;
+  border-left: 1px solid $dark-color;
+}
