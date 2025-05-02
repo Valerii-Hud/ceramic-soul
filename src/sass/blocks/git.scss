@@ -1,7 +1,13 @@
-@use "/src/sass/base/variables.scss" as *;
+@use '/src/sass/base/variables.scss' as *;
 
 .git {
   padding-top: 60px;
+  .just-validate {
+    &-error-field {
+      border: 0.5px solid $ui-error;
+    }
+  }
+
   &__wrapper {
     margin-top: 60px;
   }
