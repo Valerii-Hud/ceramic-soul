@@ -651,11 +651,14 @@
             </div>
             <form action="#" class="footer__form">
               <input
+                name="formEmail"
+                id="formEmail"
                 placeholder="Enter your e-mail"
                 type="email"
                 class="footer__input"
                 required
               />
+              <div class="error-message"></div>
               <label class="footer__check-block" for="footer__checkbox">
                 <input
                   required
@@ -665,6 +668,8 @@
                 />
                 I agree with the <a href="#">terms</a></label
               >
+              <div class="checkbox-error-message"></div>
+
               <button class="btn-submit footer__form-btn">submit</button>
             </form>
           </div>

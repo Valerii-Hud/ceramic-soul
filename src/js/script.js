@@ -80,7 +80,7 @@ try {
 }
 
 try {
-  const errorEl = document
+  const emailEl = document
     .querySelector('#question')
     .parentElement.querySelector('.error-message');
   const validator = new JustValidate('form');
@@ -129,7 +129,7 @@ try {
       ],
 
       {
-        errorsContainer: errorEl,
+        errorsContainer: emailEl,
       }
     )
     .addField(
@@ -143,6 +143,53 @@ try {
 
       {
         errorsContainer: checkboxEl,
+      }
+    );
+} catch (e) {
+  console.error(e);
+}
+
+try {
+  const emailEl = document
+    .querySelector('#formEmail')
+    .parentElement.querySelector('.error-message');
+  const footer_checkbox = document
+    .querySelector('#footer__checkbox')
+    .parentElement.parentElement.querySelector('.checkbox-error-message');
+  const footerValidator = new JustValidate('.footer__form');
+  footerValidator
+    .addField(
+      '#formEmail',
+      [
+        {
+          rule: 'required',
+          errorMessage: 'This field is required.',
+        },
+        {
+          rule: 'email',
+        },
+        {
+          rule: 'minLength',
+          value: 3,
+          errorMessage:
+            'Please enter an email that is longer than 3 characters.',
+        },
+      ],
+      {
+        errorsContainer: emailEl,
+      }
+    )
+    .addField(
+      '#footer__checkbox',
+      [
+        {
+          rule: 'required',
+          errorMessage: 'Please accept the privacy policy',
+        },
+      ],
+
+      {
+        errorsContainer: footer_checkbox,
       }
     );
 } catch (e) {
