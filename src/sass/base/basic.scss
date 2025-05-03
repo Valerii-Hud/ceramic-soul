@@ -1,4 +1,4 @@
-@use "/src/sass/base/variables.scss" as *;
+@use '/src/sass/base/variables.scss' as *;
 
 h1,
 h2,
@@ -12,8 +12,8 @@ ul {
   margin: 0;
 }
 
-ol[role="list"],
-ul[role="list"] {
+ol[role='list'],
+ul[role='list'] {
   list-style: none;
   padding-inline: 0;
 }
@@ -33,7 +33,7 @@ img {
 }
 
 html {
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -63,4 +63,12 @@ body {
   .container {
     max-width: 1440px;
   }
+}
+
+// INPUTS (USER AGENT) FIX: FIXED AUTOCOMPLETE
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #31b0dd;
+  -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
 }
