@@ -144,7 +144,21 @@ try {
       {
         errorsContainer: checkboxEl,
       }
-    );
+    )
+    .onSuccess((e) => {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      fetch('https://httpbin.org/post', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log('Success', data);
+          form.reset();
+        });
+    });
 } catch (e) {
   console.error(e);
 }
