@@ -1,33 +1,33 @@
 //——————~ LIBS ~——————//
-@use "/src/sass/libs/fontello.scss";
-@use "/src/sass/libs/grids-min.scss";
-@use "/src/sass/libs/grids-responsive-min.scss";
-@use "/src/sass/libs/modern-normalize.min.scss";
+@use '/src/sass/libs/fontello.scss';
+@use '/src/sass/libs/grids-min.scss';
+@use '/src/sass/libs/grids-responsive-min.scss';
+@use '/src/sass/libs/modern-normalize.min.scss';
 
 //——————~ BASES ~——————//
-@use "/src/sass/base/variables.scss";
-@use "/src/sass/base/basic.scss";
-@use "/src/sass/base/mixins.scss";
+@use '/src/sass/base/variables.scss';
+@use '/src/sass/base/basic.scss';
+@use '/src/sass/base/mixins.scss';
 
 //——————~ REUSABLE COMPONENTS ~——————//
-@use "/src/sass/blocks/header.scss";
-@use "/src/sass/blocks/footer.scss";
+@use '/src/sass/blocks/header.scss';
+@use '/src/sass/blocks/footer.scss';
 
 //——————~ UI COMPONENTS ~——————//
-@use "/src/sass/ui/titles.scss";
-@use "/src/sass/ui/buttons.scss";
+@use '/src/sass/ui/titles.scss';
+@use '/src/sass/ui/buttons.scss';
 
 //——————~ COMPONENTS ~——————//
-@use "/src/sass/blocks/promo.scss";
-@use "/src/sass/blocks/activities.scss";
-@use "/src/sass/blocks/git.scss";
-@use "/src/sass/blocks/works.scss";
-@use "/src/sass/blocks/catalog.scss";
-@use "/src/sass/blocks/blog.scss";
-@use "/src/sass/blocks/about.scss";
-@use "/src/sass/blocks/find.scss";
+@use '/src/sass/blocks/promo.scss';
+@use '/src/sass/blocks/activities.scss';
+@use '/src/sass/blocks/git.scss';
+@use '/src/sass/blocks/works.scss';
+@use '/src/sass/blocks/catalog.scss';
+@use '/src/sass/blocks/blog.scss';
+@use '/src/sass/blocks/about.scss';
+@use '/src/sass/blocks/find.scss';
 
-@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;1,400&display=swap');
 
 // :root {
 // 	--light-color: #f5f5f7;
