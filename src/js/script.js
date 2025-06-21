@@ -1,3 +1,4 @@
+'use strict';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -5,7 +6,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import JustValidate from 'just-validate';
 
-import { CATALOG_PAGE, ABOUT_PAGE, BLOG_PAGE, HOME_PAGE } from './pages';
+import {
+  CATALOG_PAGE,
+  ABOUT_PAGE,
+  BLOG_PAGE,
+  HOME_PAGE,
+  ADMIN_PAGE,
+} from './pages';
 import { blogCard } from './components/Blog';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -52,19 +59,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function toggleMenu() {
-    const burger = document.querySelector('.burger'),
-      menu = document.querySelector('.header__menu'),
-      close = menu.querySelector('.header__menu-close');
+    try {
+      const burger = document.querySelector('.burger'),
+        menu = document.querySelector('.header__menu'),
+        close = menu.querySelector('.header__menu-close');
 
-    burger.addEventListener('click', () => {
-      menu.classList.add('header__menu_active');
-      document.body.style.overflow = 'hidden';
-    });
+      burger.addEventListener('click', () => {
+        menu.classList.add('header__menu_active');
+        document.body.style.overflow = 'hidden';
+      });
 
-    close.addEventListener('click', () => {
-      menu.classList.remove('header__menu_active');
-      document.body.style.overflow = '';
-    });
+      close.addEventListener('click', () => {
+        menu.classList.remove('header__menu_active');
+        document.body.style.overflow = '';
+      });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   function initializeTabs() {
@@ -74,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => {
-          tabs.forEach((t) => t.classList.remove('catalog__tab_active'));
-          contents.forEach((c) => (c.style.display = 'none'));
+          tabs.forEach((tab) => tab.classList.remove('catalog__tab_active'));
+          contents.forEach((content) => (content.style.display = 'none'));
           tab.classList.add('catalog__tab_active');
           contents[index].style.display = 'grid';
         });
@@ -219,11 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function createElement(elem) {
-    document.body.insertAdjacentHTML('beforeend', elem.trim());
-  }
-
   function createPage(page) {
+    function createElement(elem) {
+      document.body.insertAdjacentHTML('beforeend', elem.trim());
+    }
     for (let section of page) {
       createElement(section);
     }
@@ -264,13 +274,50 @@ document.addEventListener('DOMContentLoaded', () => {
         </div></div>`;
       }
 
-      for (let i = 0; i <= 2; i++) {
+      for (let i = 0; i <= blogCard.titles.length - 1; i++) {
         createBlogData(
           blogCard.images[i],
           blogCard.titles[i],
           blogCard.descriptions[i]
         );
       }
+    }
+  }
+
+  function dynamicBlogAppend() {
+    let newBlogCard = {
+      title: undefined,
+      img: undefined,
+      description: undefined,
+    };
+
+    try {
+      const newBlogForm = document.querySelector('.admin__inputs'),
+        newBlogTitle = newBlogForm.querySelector('#blogTitle'),
+        newBlogImg = newBlogForm.querySelector('#blogImgLink'),
+        newBlogDescription = newBlogForm.querySelector('#blogDescription');
+      newBlogForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        newBlogCard.title = newBlogTitle.value.trim();
+        newBlogCard.img = newBlogImg.value.trim();
+        newBlogCard.description = newBlogDescription.value.trim();
+        console.log(newBlogCard);
+        function cardAppend() {
+          if (newBlogCard.description && newBlogCard.img && newBlogCard.title) {
+            blogCard.images.push(newBlogImg.value.trim());
+            blogCard.titles.push(newBlogTitle.value.trim());
+            blogCard.descriptions.push(newBlogDescription.value.trim());
+            console.log(blogCard);
+            document.body.innerHTML = '';
+            createPage(BLOG_PAGE);
+            // blogCard();
+            main();
+          }
+        }
+        cardAppend();
+      });
+    } catch (e) {
+      console.error(e);
     }
   }
 
@@ -281,9 +328,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeTabs();
     validateEmail();
     blogCards();
+    dynamicBlogAppend();
   }
-
-  createPage(HOME_PAGE);
+  // if (newBlogCard) {
+  //   console.log(newBlogCard);
+  // }
+  createPage(ADMIN_PAGE);
   main();
 });
 

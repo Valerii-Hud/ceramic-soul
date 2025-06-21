@@ -9,7 +9,7 @@ import { aboutSection } from './components/About';
 import { findSection } from './components/Find';
 import { catalogSection } from './components/Catalog';
 import { footerSection } from './components/Footer';
-
+import { adminPanelSection } from './components/AdminPanel';
 export const HOME_PAGE = [
   promoSection,
   activitiesSection,
@@ -28,3 +28,5 @@ export const ABOUT_PAGE = [
 ];
 
 export const CATALOG_PAGE = [catalogSection, footerSection];
+
+export const ADMIN_PAGE = [adminPanelSection];
