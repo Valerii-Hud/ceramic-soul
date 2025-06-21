@@ -14,7 +14,7 @@ import {
   ADMIN_PAGE,
 } from './pages';
 import { blogCard } from './components/Blog';
-
+import { currentUser } from './profiles';
 document.addEventListener('DOMContentLoaded', () => {
   function swiperConfiguration() {
     try {
@@ -321,6 +321,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function createAdminPanelBtn(person) {
+    const linksParent = document.querySelector('.header__nav > ul');
+
+    if (person && person.isAdmin) {
+      const li = document.createElement('li'),
+        a = document.createElement('a');
+
+      a.href = '#';
+      a.className = 'header__menu-link';
+      a.dataset.page = 'admin';
+      a.textContent = 'Admin ';
+      li.appendChild(a);
+      linksParent.appendChild(li);
+    }
+  }
   function main() {
     switchPage();
     swiperConfiguration();
@@ -329,11 +344,11 @@ document.addEventListener('DOMContentLoaded', () => {
     validateEmail();
     blogCards();
     dynamicBlogAppend();
+    createAdminPanelBtn(currentUser);
+    switchPageContent('[data-page="admin"]', ADMIN_PAGE);
   }
-  // if (newBlogCard) {
-  //   console.log(newBlogCard);
-  // }
-  createPage(ADMIN_PAGE);
+
+  createPage(HOME_PAGE);
   main();
 });
 
