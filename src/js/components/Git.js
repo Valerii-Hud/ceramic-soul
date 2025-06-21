@@ -73,5 +73,5 @@ export const gitSection = `<section class="git">
       </div>
     </div>
   </div>
-</section>;
+</section>
 `;

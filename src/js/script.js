@@ -6,6 +6,8 @@ import 'swiper/css/navigation';
 import JustValidate from 'just-validate';
 
 import { CATALOG_PAGE, ABOUT_PAGE, BLOG_PAGE, HOME_PAGE } from './pages';
+import { blogCard } from './components/Blog';
+
 document.addEventListener('DOMContentLoaded', () => {
   function swiperConfiguration() {
     try {
@@ -227,20 +229,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function main() {
-    createPage(HOME_PAGE);
-    switchPage('[data-page="home"]', HOME_PAGE);
-    switchPage('[data-page="blog"]', BLOG_PAGE);
-    switchPage('[data-page="catalog"]', CATALOG_PAGE);
-    switchPage('[data-page="about"]', ABOUT_PAGE);
-
-    swiperConfiguration();
-    toggleMenu();
-    initializeTabs();
-    validateEmail();
+  function switchPage() {
+    switchPageContent('[data-page="home"]', HOME_PAGE);
+    switchPageContent('[data-page="blog"]', BLOG_PAGE);
+    switchPageContent('[data-page="catalog"]', CATALOG_PAGE);
+    switchPageContent('[data-page="about"]', ABOUT_PAGE);
   }
 
-  function switchPage(data, page) {
+  function switchPageContent(data, page) {
     document.querySelectorAll(data).forEach((link) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -251,6 +247,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function blogCards() {
+    if (document.querySelector('.blog')) {
+      const cardsParent = document.querySelector('.blog__wrapper');
+
+      function createBlogData(img, title, descr) {
+        cardsParent.innerHTML += ` <div class="blog__card"><div class="blog__data pure-g">
+          <div class="pure-u-1 pure-u-md-1-2">
+            <img class="blog__img" src="${img}" alt="tea" />
+          </div>
+          <div class="pure-u-1 pure-u-md-1-2 blog__data-column">
+            <h3 class="title__h3 blog__title-h3">${title}</h3>
+            <button class="btn__read">Read</button>
+          </div>
+          <div class="blog__descr">${descr}</div>
+        </div></div>`;
+      }
+
+      for (let i = 0; i <= 2; i++) {
+        createBlogData(
+          blogCard.images[i],
+          blogCard.titles[i],
+          blogCard.descriptions[i]
+        );
+      }
+    }
+  }
+
+  function main() {
+    switchPage();
+    swiperConfiguration();
+    toggleMenu();
+    initializeTabs();
+    validateEmail();
+    blogCards();
+  }
+
+  createPage(HOME_PAGE);
   main();
 });
 
