@@ -16,48 +16,6 @@ import {
 import { blogCard } from './components/Blog';
 import { currentUser } from './profiles';
 document.addEventListener('DOMContentLoaded', () => {
-  function swiperConfiguration() {
-    try {
-      new Swiper('.works__slider', {
-        modules: [Navigation, Pagination],
-        allowSlideNext: true,
-        allowSlidePrev: true,
-        allowTouchMove: true,
-        parallax: true,
-        keyboard: true,
-        mousewheel: true,
-        loop: true,
-        zoom: true,
-        speed: 1000,
-        slidesPerView: 1,
-        spaceBetween: 10,
-        autoplay: {
-          delay: 5000,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true,
-        },
-        breakpoints: {
-          1200: {
-            slidesPerView: 3,
-            spaceBetween: 5,
-            navigation: {
-              nextEl: '.icon-right-open',
-              prevEl: '.icon-left-open',
-            },
-          },
-          1920: {
-            spaceBetween: 35,
-          },
-        },
-      });
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
   function toggleMenu() {
     try {
       const burger = document.querySelector('.burger'),
@@ -336,9 +294,70 @@ document.addEventListener('DOMContentLoaded', () => {
       linksParent.appendChild(li);
     }
   }
+
+  function swiperSlider() {
+    const swiperParent = document.querySelector('.swiper-wrapper');
+    const swiperSlidesLinks = [
+      '/src/img/works/tea-1.jpg',
+      '/src/img/works/tea-2.jpg',
+      '/src/img/works/tea-3.jpg',
+      '/src/img/works/tea-2.jpg',
+    ];
+    function generateSlider() {
+      swiperSlidesLinks.forEach((slide) => {
+        const swiperSlide = document.createElement('div'),
+          swiperContent = document.createElement('img');
+
+        swiperSlide.className = 'swiper-slide';
+        swiperContent.alt = 'tea';
+        swiperContent.src = slide;
+        swiperSlide.appendChild(swiperContent);
+        swiperParent.appendChild(swiperSlide);
+      });
+    }
+
+    generateSlider();
+  }
+  function swiperConfiguration() {
+    try {
+      new Swiper('.works__slider', {
+        modules: [Navigation, Pagination],
+        allowSlideNext: true,
+        allowSlidePrev: true,
+        allowTouchMove: true,
+        parallax: true,
+        keyboard: true,
+        mousewheel: true,
+        loop: true,
+        zoom: true,
+        speed: 1000,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 5000,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+            navigation: false,
+          },
+          1920: {
+            spaceBetween: 35,
+          },
+        },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  }
   function main() {
     switchPage();
-    swiperConfiguration();
     toggleMenu();
     initializeTabs();
     validateEmail();
@@ -346,6 +365,8 @@ document.addEventListener('DOMContentLoaded', () => {
     dynamicBlogAppend();
     createAdminPanelBtn(currentUser);
     switchPageContent('[data-page="admin"]', ADMIN_PAGE);
+    swiperSlider();
+    swiperConfiguration();
   }
 
   createPage(HOME_PAGE);

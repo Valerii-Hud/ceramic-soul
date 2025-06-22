@@ -6,18 +6,6 @@ export const worksSection = `    <section class="works">
         <div class="works__wrapper">
           <div class="works__slider swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="/src/img/works/tea-1.jpg" alt="tea" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/src/img/works/tea-2.jpg" alt="tea" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/src/img/works/tea-3.jpg" alt="tea" />
-              </div>
-              <div class="swiper-slide">
-                <img src="/src/img/works/tea-2.jpg" alt="tea" />
-              </div>
             </div>
           </div>
           <div class="swiper-pagination"></div>
